@@ -13,6 +13,7 @@ pipeline {
       steps {
         echo 'sonar'
         sleep 7
+        logstashSend failBuild: true, maxLines: 1000
       }
     }
     stage('Build Validation') {
