@@ -1,7 +1,7 @@
 pipeline {
   agent none
   timestamp {    
-  logstash {
+  logstashSend {
   stages {
     stage('Sonar Quality') {
         agent {
