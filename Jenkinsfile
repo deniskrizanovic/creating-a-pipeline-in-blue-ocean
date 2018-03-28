@@ -1,7 +1,7 @@
 pipeline {
   agent none
     
-
+  logstash {
   stages {
     stage('Sonar Quality') {
         agent {
@@ -10,12 +10,12 @@ pipeline {
               args '-p 3001:3001'
             }
         }
-      logstash {
+
         steps {
           echo 'sonar'
           sleep 7
         }
-      }
+      
     }
     stage('Build Validation') {
       parallel {
@@ -145,4 +145,5 @@ pipeline {
     
     
           } //end stages
+  }//end logstash
         } //end pipeline
