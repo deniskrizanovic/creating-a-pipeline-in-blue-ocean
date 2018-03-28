@@ -10,10 +10,11 @@ pipeline {
               args '-p 3001:3001'
             }
         }
-      steps {
-        echo 'sonar'
-        sleep 7
-        logstashSend failBuild: true, maxLines: 1000
+      logstash {
+        steps {
+          echo 'sonar'
+          sleep 7
+        }
       }
     }
     stage('Build Validation') {
