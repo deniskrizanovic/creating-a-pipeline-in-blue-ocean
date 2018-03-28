@@ -14,7 +14,7 @@ pipeline {
         steps {
           echo 'sonar'
           sleep 7
-          timestamp{
+          timestamps{
           logstashSend failBuild: true, maxLines: 1000
           }
         }
