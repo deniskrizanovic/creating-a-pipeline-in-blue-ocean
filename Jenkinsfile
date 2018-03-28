@@ -1,6 +1,5 @@
 
-logstash {
-pipeline {
+node {
   agent none
 
   stages {
@@ -148,4 +147,4 @@ pipeline {
           } //end stages
 
         } //end pipeline
-} //end logstash
+
