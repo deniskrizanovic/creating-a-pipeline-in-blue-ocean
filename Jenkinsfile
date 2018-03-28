@@ -14,6 +14,7 @@ pipeline {
         steps {
           echo 'sonar'
           sleep 7
+          logstashSend failBuild: true, maxLines: 1000
         }
       
     }
@@ -29,6 +30,7 @@ pipeline {
           steps {
             echo 'working'
             sleep 10
+            logstashSend failBuild: true, maxLines: 1000
           }
         }
         stage('Review Deployment Checklist') {
@@ -39,6 +41,7 @@ pipeline {
                  [$class: 'TextParameterDefinition', defaultValue: '', description: 'Comments if false', name: 'env'],
                                                                                                                      ])
             }
+          logstashSend failBuild: true, maxLines: 1000
           }
         }
       }
@@ -52,6 +55,7 @@ pipeline {
         steps {
           echo 'merge pull request'
           sleep 5
+          logstashSend failBuild: true, maxLines: 1000
         }
       }
       stage('Full CI Validation') {
@@ -141,6 +145,8 @@ pipeline {
                [$class: 'TextParameterDefinition', defaultValue: '', description: 'Comments if false', name: 'env'],
                                                                                                    ])
             }
+          logstashSend failBuild: true, maxLines: 1000
+          
         }
     
     
