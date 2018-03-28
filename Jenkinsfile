@@ -40,8 +40,9 @@ pipeline {
                    [$class: 'BooleanParameterDefinition', defaultValue: false, description: '', name: 'Please confirm you agree with this'],
                  [$class: 'TextParameterDefinition', defaultValue: '', description: 'Comments if false', name: 'env'],
                                                                                                                      ])
+            logstashSend failBuild: true, maxLines: 1000
             }
-          logstashSend failBuild: true, maxLines: 1000
+          
           }
         }
       }
@@ -144,8 +145,9 @@ pipeline {
               [$class: 'BooleanParameterDefinition', defaultValue: false, description: '', name: 'Please confirm'],
                [$class: 'TextParameterDefinition', defaultValue: '', description: 'Comments if false', name: 'env'],
                                                                                                    ])
+            logstashSend failBuild: true, maxLines: 1000
             }
-          logstashSend failBuild: true, maxLines: 1000
+          
           
         }
     
