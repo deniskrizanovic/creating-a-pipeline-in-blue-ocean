@@ -1,7 +1,6 @@
 pipeline {
   agent none
-  timestamp {    
-  logstashSend {
+
   stages {
     stage('Sonar Quality') {
         agent {
@@ -145,6 +144,5 @@ pipeline {
     
     
           } //end stages
-  }//end logstash
-  } //end timestamp
+
         } //end pipeline
