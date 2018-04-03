@@ -1,7 +1,9 @@
 
 pipeline {
   agent none
-  options { timestamps() }
+  options { 
+    timestamps() 
+  }
 
   stages {
     stage('Sonar Quality') {
