@@ -2,7 +2,7 @@
 pipeline {
   agent none
   options { 
-    timestamps() 
+    timestamps() //why this not work?
   }
 
   stages {
