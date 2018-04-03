@@ -1,6 +1,7 @@
 
 pipeline {
   agent none
+  options { timestamps() }
 
   stages {
     stage('Sonar Quality') {
